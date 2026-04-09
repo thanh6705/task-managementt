@@ -10,13 +10,10 @@ const taskRoutes = require("./routes/taskRoutes");
 const app = express();
 
 // middleware
-const corsOptions = {
-  origin: process.env.FRONTEND_URL || ["http://localhost:3000", "http://localhost:5000"],
-  credentials: true,
-  optionsSuccessStatus: 200
-};
+app.use(cors({
+  origin: "*"
+}));
 
-app.use(cors(corsOptions));
 app.use(express.json());
 
 // connect DB

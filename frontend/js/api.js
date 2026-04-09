@@ -1,7 +1,6 @@
 // Development: http://localhost:5000, Production: https://task-managementt-3bda.onrender.com
-const API_URL = process.env.NODE_ENV === 'production' 
-    ? "https://task-managementt-3bda.onrender.com/api" 
-    : "http://localhost:5000/api";
+// Nếu đã deploy backend lên Render
+const API_URL = "https://task-managementt-3bda.onrender.com/api";
 const api = {
     async get(endpoint) {
         try {
