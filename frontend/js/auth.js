@@ -1,8 +1,9 @@
 ﻿const auth = {
     checkLogin() {
         const token = localStorage.getItem('token');
-        const isLoginPage = window.location.pathname.includes('login.html');
-        const isRegisterPage = window.location.pathname.includes('register.html');
+        const pathname = window.location.pathname;
+        const isLoginPage = /login(\.html)?$/.test(pathname);
+        const isRegisterPage = /register(\.html)?$/.test(pathname);
 
         if (!token && !isLoginPage && !isRegisterPage) {
             window.location.href = 'login.html';

@@ -1,6 +1,12 @@
 // Development: http://localhost:5000, Production: https://task-managementt-3bda.onrender.com
-// Nếu đã deploy backend lên Render
-const API_URL = "https://task-managementt-3bda.onrender.com/api";
+// Nếu đang chạy trên máy local hoặc từ file://, dùng backend local
+const API_URL = (function() {
+  const host = window.location.hostname;
+  if (!host || host === 'localhost' || host === '127.0.0.1') {
+    return 'http://localhost:5000/api';
+  }
+  return 'https://task-managementt-3bda.onrender.com/api';
+})();
 const api = {
     async get(endpoint) {
         try {
