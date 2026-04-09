@@ -29,12 +29,12 @@ async function initSettings() {
                 return;
             }
             
-            const res = await apiRequest('/change-password', 'POST', {
+            const res = await apiRequest('/auth/change-password', 'POST', {
                 old_password: oldPassword,
                 new_password: newPassword
             });
             
-            alert(res.message || (res.success ? 'Đổi mật khẩu thành công!' : 'Đổi mật khẩu thất bại'));
+            alert(res.message || (!res.error ? 'Đổi mật khẩu thành công!' : 'Đổi mật khẩu thất bại'));
             if (res.success) {
                 changePasswordForm.reset();
             }

@@ -1,5 +1,7 @@
-const API_URL = "http://localhost:5000/api";
-
+// Development: http://localhost:5000, Production: https://task-managementt-3bda.onrender.com
+const API_URL = process.env.NODE_ENV === 'production' 
+    ? "https://task-managementt-3bda.onrender.com/api" 
+    : "http://localhost:5000/api";
 const api = {
     async get(endpoint) {
         try {
