@@ -1,0 +1,26 @@
+<div class="tasks-container">
+  <div class="tasks-header">
+    <h1>📝 Quản lý Task</h1>
+    <button class="add-task-btn" onclick="openAddTask()">
+      + Thêm task mới
+    </button>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchTask" placeholder="🔍 Tìm kiếm task..." onkeyup="filterTasks()">
+    <select id="statusFilter" onchange="filterTasks()">
+      <option value="all">Tất cả</option>
+      <option value="todo">Chưa hoàn thành</option>
+      <option value="in-progress">Đang thực hiện</option>
+      <option value="done">Hoàn thành</option>
+    </select>
+  </div>
+
+  <div class="stats-mini">
+    <span>📊 Tổng: <strong id="totalTasks">0</strong></span>
+    <span>✅ Hoàn thành: <strong id="doneTasks">0</strong></span>
+    <span>⏳ Đang làm: <strong id="inProgressTasks">0</strong></span>
+  </div>
+
+  <div id="allTasksList" class="task-list"></div>
+</div>

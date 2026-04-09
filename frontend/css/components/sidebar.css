@@ -1,0 +1,73 @@
+.sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #2d9cdb, #2980b9);
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar .logo span {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-menu .nav-item:hover,
+.nav-menu .nav-item.active {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.nav-menu .nav-item span.material-icons {
+  font-size: 20px;
+}
+
+.logout-section {
+  margin-top: auto;
+}
+
+.logout-section button {
+  width: 100%;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-section button:hover {
+  background: rgba(255, 255, 255, 0.24);
+}

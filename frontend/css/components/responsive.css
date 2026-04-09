@@ -1,0 +1,108 @@
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1000px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    min-height: auto;
+  }
+
+  .main-layout {
+    padding: 20px;
+  }
+
+  .search-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .toggle-label {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    padding: 15px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  .task-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .task-actions {
+    justify-content: center;
+  }
+
+  .modal-content {
+    margin: 10px;
+    padding: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-mini {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 20px 15px;
+  }
+
+  .nav-menu .nav-item {
+    padding: 12px 14px;
+  }
+
+  .auth-card {
+    margin: 10px;
+    padding: 24px 20px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    text-align: center;
+  }
+}

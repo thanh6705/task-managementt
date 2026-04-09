@@ -1,0 +1,41 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <div class="header-top">
+      <h1>📊 Bảng điều khiển</h1>
+      <div class="avatar" id="avatarBtn">👤</div>
+    </div>
+    <p class="slogan">✨ "Quản lý công việc thông minh - Thành công bền vững"</p>
+  </div>
+
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon">✅</div>
+      <div class="stat-info">
+        <h3 id="completedCount">0</h3>
+        <p>Hoàn thành</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⏳</div>
+      <div class="stat-info">
+        <h3 id="inProgressCount">0</h3>
+        <p>Đang thực hiện</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⏰</div>
+      <div class="stat-info">
+        <h3 id="pendingCount">0</h3>
+        <p>Chưa hoàn thành</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-tasks">
+    <div class="section-header">
+      <h3>📋 Task gần nhất</h3>
+      <button class="view-all-btn" onclick="loadPage('tasks')">Xem tất cả →</button>
+    </div>
+    <div id="recentTasksList" class="task-list"></div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <script>
+    (function(){
+      try {
+        var token = localStorage.getItem('token');
+        var path = window.location.pathname;
+        var isIndex = path === '/' || path.endsWith('/index.html');
+        if (!token && isIndex) {
+          window.location.replace('login.html');
+        }
+        
+        // Áp dụng dark mode nếu được lưu
+        var darkMode = localStorage.getItem('darkMode') === 'true';
+        if (darkMode) {
+          document.body.classList.add('dark');
+        }
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body class="light-mode"> <div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="material-icons">assignment_turned_in</span>
+      <h2>TaskApp</h2>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li data-page="dashboard" class="nav-item active">
+          <span class="material-icons">dashboard</span> Trang chính
+        </li>
+        <li data-page="tasks" class="nav-item">
+          <span class="material-icons">checklist</span> Task của tôi
+        </li>
+        <li data-page="profile" class="nav-item">
+          <span class="material-icons">account_circle</span> Tài khoản
+        </li>
+        <li data-page="settings" class="nav-item">
+          <span class="material-icons">settings</span> Cài đặt
+        </li>
+      </ul>
+    </nav>
+    <div class="logout-section">
+      <button id="logoutBtn"><span class="material-icons">logout</span> Đăng xuất</button>
+    </div>
+  </aside>
+
+  <main class="main-layout">
+    <header class="top-bar"></header>
+
+    <section id="mainContent" class="content-body">
+      </section>
+  </main>
+</div>
+
+<div id="taskModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="modalTitle">Thêm Task mới</h3>
+      <span class="close">&times;</span>
+    </div>
+    <form id="taskForm">
+      <input type="hidden" id="taskId">
+      <div class="form-group">
+        <label>Tiêu đề *</label>
+        <input type="text" id="taskTitle" placeholder="Làm bài tập, họp nhóm..." required>
+      </div>
+      <div class="form-group">
+        <label>Mô tả chi tiết</label>
+        <textarea id="taskDesc" rows="4" placeholder="Ghi chú thêm..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Hạn chót</label>
+          <input type="datetime-local" id="taskDeadline">
+        </div>
+        <div class="form-group">
+          <label>Trạng thái</label>
+          <select id="taskStatus">
+            <option value="todo">⏰ Chờ thực hiện</option>
+            <option value="in-progress">⏳ Đang làm</option>
+            <option value="done">✅ Đã xong</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Đính kèm tệp</label>
+        <div class="file-input-wrapper">
+            <input type="file" id="taskFile">
+            <small>Hỗ trợ: PDF, JPG, PNG (Max 5MB)</small>
+        </div>
+      </div>
+      <button type="submit" class="btn-save">💾 Lưu công việc</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script> </body>
+</html>
